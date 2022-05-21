@@ -7,7 +7,7 @@ import { MongoClient,ObjectId } from "mongodb";
 const app = express();
 app.use(cors())
 app.use(express.json())
-const mongoClient = new MongoClient("mongodb://localhost:27017");
+const mongoClient = new MongoClient(process.env.MONGO_URI);
 let db;
 const conexao = mongoClient.connect();
 
