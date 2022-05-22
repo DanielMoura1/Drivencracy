@@ -7,7 +7,7 @@ import { MongoClient,ObjectId } from "mongodb";
 const app = express();
 app.use(cors())
 app.use(express.json())
-const mongoClient = new MongoClient(process.env.MONGO_URI);
+const mongoClient = new MongoClient("mongodb://localhost:27017");
 let db;
 const conexao = mongoClient.connect();
 
@@ -184,6 +184,6 @@ conexao.then(()=>{
 
 })
 
-app.listen(process.env.PORT,() =>{
-    console.log(chalk.bold.green('funcionando! na porta'+process.env.PORT))
+app.listen(5000,() =>{
+    console.log(chalk.bold.green('funcionando! na porta 5000'))
 })
